@@ -1,0 +1,47 @@
+---
+import { effect } from 'astro:schema';
+import { SITE } from '../config/site';
+import { url } from '../lib/rutas';
+const { compacto = false } = Astro.props;
+const ruta = Astro.url.pathname;
+const enlaces = [
+    { href: url('/temas'), texto: 'Temas', activo: ruta.startsWith(url('/temas')) },
+    { href: url('/mapa-de-ruta'), texto: 'Mapa de ruta', activo: ruta.startsWith(url('/mapa-de-ruta')) },
+];
+---
+<header class="fixed top-3 inset-x-0 z-50 flex justify-center px-3">
+    <nav class="w-full max-w-5xl h-13 rounded-full bg-[#0C0E14]/70 backdrop-blur-xl border border-white/10 p1-4 pr-2.5 flex items-center justify-between" aria-label="Principal">
+        <a href={url('/')} class="flex items-center gap-2 font-display font-extrabold text-lg text-white tracking-tight" aria-label={`$SITE.nombre}, inicio`}>
+            <svg class="glyph" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <defs><linearGradient id="gl" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#7C5CFF"/><stop offset="1" stop-color="#22D3EE"/></linearGradient></defs>
+                <path d="M5.5 17.5 12 5.5l6.5 12M5.5 17.5h13" stroke="url(#gl)" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+                <circle cx="5.5" cy="17.5" r="2.4" fill="#7C5CFF"/>
+                <circle cx="12" cy="5.5" r="2.4" fill="#22D3EE"/>
+                <circle cx="18.5" cy="17.5" r="2.4" fill="#6EE7B7"/>
+            </svg>
+            {SITE.nombre}
+        </a>
+        <div class="flex items-center gap-1 text-sm font-medium">
+          {!compacto && enlaces.map(e => (
+            <a href={e.href} aria-current={e.activo ? 'page' : undefined}
+               class:list={['px-3.5 py-1.5 rounded-full', e.activo ? 'bg-white/10 text-white' : 'text-slate-400 hover:text-white']}>{e.texto}</a>
+        ))}
+        <button type="button" data-abrir-paleta class="ml-1 px-3 py-1.5 rounded-full text-slate-400 hover:text-white hover:bg-white/5 flex items-center gap-2" aria-label="Buscar">
+            <span class="icon" style="font-size:18px">search</span>
+            <span class="hidden sm:inline">Buscar</span>
+            <kbd class="lbl px-1.5 py-0.5 rounded bg-white/10 hidden sm:inline">Ctrl K</kbd>
+        </button>
+        <a href={SITE.repo} target="_blank" rel="noopener noreferrer" class="p-2 rounded-full text-slate-400 hover:text-white" aria-label="Repositorio de código">
+            <span class="icon">code</span> </div>
+        </a>
+    </div>
+   </nav>
+</header>
+
+<style>
+  .glyph {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+  }
+</style>

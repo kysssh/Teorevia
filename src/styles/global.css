@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+@theme {
+    --color-fondo: #0B0D12;
+    --color-sup: #11141C;
+    --color-sup2: #171B26;
+    --color-violeta: #7C5CFF;
+    --color-cian: #22D3EE;
+    --color-menta: #6EE7B7;
+    --font-display: 'Bricolage Grotesque Variable', 'Geist Variable', system-ui, sans-serif;
+    --font-sans: 'Geist Variable', system-ui, -apple-serif;
+    --font-mono: 'Geist Mono Variable', ui-monospace, monospace;
+}
+
+html { color-scheme: dark; scroll-behavior: smooth; }
+body {
+    background: #0B0D12 radial-gradient(rgba(255,255,255,.06) 1px, transparent 1px) 0 0 / 24px 24px;
+    color: #CBD5E1; font-family: var(--font-sans); -webkit-font-smoothing: antialiased;
+    --c: #7C5CFF;
+}
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-thumb { background: #232838; border-radius: 9999px; }
+:focus-visible { outline: 2px solid var(--c); outline-offset: 3px; border-radius: 8px; }
+
+.icon { font-family: 'Material Symbols Outlined'; font-weight: 400; font-style: normal; line-height: 1; font-size: 20px;
+  display: inline-block; white-space: nowrap; font-feature-settings: 'liga'; -webkit-font-smoothing: antialiiased; }
+
+/* Componentes compartidos (vienen de los MVP) */
+.card { background: #11141C; border: 1px solid rgba(255,255,255,.10); border-radius: 16px; }
+.lbl { font: 500 11px/14px var(--font-mono); letter-spacing: .04em; color: #64748B; text-transform: uppercase; }
+.chip { font: 500 12px var(--font-mono); padding: 4px 10px; border-radius: 10px; cursor: pointer;
+  background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.10); color: #CBD5E1; }
+.c-text { color: var(--c); }
+.c-solid { background: var(--c); color: #0B0D12; }
+.c-soft { background: color-mix(in srgb, var(--c) 10%, transparent);
+  border-color: color-mix(in srgb, var(--c) 28%, transparent); color: var(--c); }
+.sr-only-focus:not(:focus) { position: absolute; left: -9999px; }
+ 

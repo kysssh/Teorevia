@@ -1,0 +1,13 @@
+---
+import { SITE } from '../config/site';
+import { url } from '../lib/rutas';
+---
+<footer class="relatibe z-10 border-t border-white/5 bg-[#080A0E] py-8 px-6 text-center text-xs text-slate-500 space-y-1.5">
+    <p>{SITE.nombre} © Copyright {SITE.anio} {SITE.autor}. Todos los derechos reservados.</p>
+    <p>The Root Node of Competitive Programming. P.</p>
+    <p class="flex justify-center gap-3 flex-wrap">
+        <a href={url('/privacidad/')} class="hover:text-white">Política de privacidad</a><span>|</span>
+        <a href={url('/terminos/')} class="hover:text-white">Términos y condiciones</a><span>|</span>
+        <a href={url('/contribuir')} class="hover:text-white">Guía de contribución</a>
+    </p>
+</footer>

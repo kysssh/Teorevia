@@ -1,0 +1,11 @@
+[
+    { "slug": "estructura-de-datos", "nombre": "Estructuras de datos", "corto": "Estructuras", "color": "#22D3EE", "icono": "dataset" },
+    { "slug": "busqueda-binaria", "nombre": "Busqueda Binaria", "corto": "Busqueda binaria", "color": "#F59E0B", "icono": "find_in_page" },
+    { "slug": "ordenamiento", "nombre": "Ordenamiento", "corto": "Ordenamiento", "color": "#3B82F6", "icono": "sort" },
+    { "slug": "grafos", "nombre": "Grafos", "corto": "Grafos", "color": "#10B981", "icono": "hub" },
+    { "slug": "programacion-dinamica", "nombre": "Programación dinámica", "corto": "DP", "color": "#EC4899", "icono": "table_rows" },
+    { "slug": "matematica", "nombre": "Matemática y teoría de números", "corto": "Matemática", "color": "#F97316", "icono": "functions" },
+    { "slug": "strings", "nombre": "Strings", "corto": "Strings", "color": "#8B5CF6", "icono": "format_quote" },
+    { "slug": "geometria", "nombre": "Geometría", "corto": "Geometría", "color": "#14B8A6", "icono": "polyline" },
+    { "slug": "tecnicas", "nombre": "Técninas", "corto": "Técnicas", "color": "#94A3B8", "icono": "construction" }
+]
